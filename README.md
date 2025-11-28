@@ -10,20 +10,34 @@ Test task implementation for DataLouna backend developer position.
 - **Validation**: Zod
 - **Testing**: Vitest
 
-## 🚀 Quick Start
+## 🚀 How to run the project
 
-1. **Start services**
+### Prerequisites
+
+- **Node.js ≥ 23.0.0** (tested on 23.11.1)  
+  → Older versions will fail during `npm test` because of native ESM + top-level await support.
+- Docker & Docker Compose (any recent version)
+  
+### Quick Start
+
+1. Clone
+   ```bash
+   git clone https://github.com/sweetdream-001/datalouna-skinport-shop.git
+   cd datalouna-skinport-shop
+   ```
+   
+2. **Start services**
    ```bash
    docker-compose up -d
    ```
 
-2. **Install and setup**
+3. **Install and setup**
    ```bash
    npm install
    npm run db:setup
    ```
 
-3. **Configure (optional)**
+4. **Configure (optional)**
    ```bash
    # Create .env file (optional, defaults work with Docker)
    PORT=3000
@@ -31,12 +45,21 @@ Test task implementation for DataLouna backend developer position.
    REDIS_URL=redis://localhost:6379
    ```
 
-4. **Run**
+5. **Run**
    ```bash
    npm run dev
    ```
 
 Server runs on `http://localhost:3000`
+
+## Troubleshooting
+
+| Problem                                    | Solution                                                                 |
+|--------------------------------------------|--------------------------------------------------------------------------|
+| `docker-compose up` says **permission denied** or **command not found** | Run with sudo: `sudo docker-compose up -d`  |
+| `npm test` fails with syntax errors        | You are using Node.js < 23 → install Node 23+ (nvm: `nvm use 23`)        |
+| Redis/Postgres containers not starting     | Try `docker-compose down -v && docker-compose up -d --build`             |
+| Port 3000 already in use                   | Stop other apps or change port in `Dockerfile` / `docker-compose.yml`    |
 
 ## 📡 API Endpoints
 
