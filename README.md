@@ -178,6 +178,15 @@ npm run build
 npm start
 ```
 
+## 🚀 Future Improvements (Production)
+
+For production deployment, consider adding:
+
+- **Rate Limiting**: Protect external API calls (e.g., Skinport) from abuse and prevent IP bans
+- **Structured Logging**: Replace `console.log` with structured logging (Winston, Pino) for better log aggregation and analysis
+- **API Monitoring**: Health check endpoints and metrics collection
+- **API Versioning**: Version endpoints (e.g., `/api/v1/items`) for backward compatibility
+
 ---
 
 **Built for DataLouna.io**
